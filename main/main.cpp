@@ -1,37 +1,18 @@
-
 #include <iostream>
 using namespace std;
 
 int main()
 {
-	int arr[] = {
-			1,
-			1,
-			1,
-			2,
-			3,
-			4,
-			4,
-			4,
-			5,
-			6,
-			7,
-			7,
-	};
+	int floors = 5;
 
-	int ans[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-
-	for (int num : arr)
+	for (int i = 1; i <= floors; i++)
 	{
-		ans[num]++;
-	}
-
-	for (int i; i < sizeof(ans) / sizeof(ans[0]); i++)
-	{
-		if (ans[i] != 0)
+		for (int j = 1; j <= i; j++)
 		{
-			cout << i << ": " << ans[i] << endl;
+			cout << "*";
 		}
+
+		cout << endl;
 	}
 
 	return 0;
