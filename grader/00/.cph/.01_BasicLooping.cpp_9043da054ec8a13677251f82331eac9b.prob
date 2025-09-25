@@ -1,0 +1,1 @@
+{"name":"Local: 01_BasicLooping","url":"d:\\Projects\\PixelmathPOSN\\grader\\00\\01_BasicLooping.cpp","tests":[{"id":1758786182687,"input":"5","output":"15"},{"id":1758786186505,"input":"782","output":"306153"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Projects\\PixelmathPOSN\\grader\\00\\01_BasicLooping.cpp","group":"local","local":true}

@@ -1,19 +1,29 @@
 #include <iostream>
 using namespace std;
 
+// Self attempt!
+
 int main()
 {
-	int floors = 5;
+	string s;
+	bool isPalindrome = true;
+	cin >> s;
 
-	for (int i = 1; i <= floors; i++)
+	int sl = s.length();
+
+	for (int i = 0; i <= sl / 2; i++)
 	{
-		for (int j = 1; j <= i; j++)
+		if (s[i] != s[sl - i - 1])
 		{
-			cout << "*";
+			isPalindrome = false;
+			break;
 		}
-
-		cout << endl;
 	}
+
+	if (isPalindrome)
+		cout << "YES";
+	else
+		cout << "NO";
 
 	return 0;
 }
