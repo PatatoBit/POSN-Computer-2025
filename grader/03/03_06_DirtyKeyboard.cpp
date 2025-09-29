@@ -10,19 +10,21 @@ int main()
 	for (int i = 0; i < s.length(); i++)
 	{
 		int j = 1;
+
 		while (s[i] == s[i + j])
 		{
-			cout << "Comparing " << i << s[i] << " and " << i + j << s[i + j] << endl;
 			j++;
 		}
 
-		cout << "Got: " << j << endl
-				 << endl;
+		newString += s[i];
 
-		i += j - 1;
-
-		// cout << j << " ";
+		if (j >= 3)
+		{
+			i += j - 1;
+		}
 	}
+
+	cout << newString;
 
 	return 0;
 }
