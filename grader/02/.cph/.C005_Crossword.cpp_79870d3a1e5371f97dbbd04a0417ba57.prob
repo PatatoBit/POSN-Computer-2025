@@ -1,0 +1,1 @@
+{"name":"Local: C005_Crossword","url":"/Users/patato/Documents/Projects/PixelmathPOSN/grader/02/C005_Crossword.cpp","tests":[{"id":1759156395114,"input":"pixelmath\nred","output":"r\npixelmath\nd"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/patato/Documents/Projects/PixelmathPOSN/grader/02/C005_Crossword.cpp","group":"local","local":true}
