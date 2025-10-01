@@ -36,27 +36,45 @@ int main()
 				cout << "Hit mountain   " << heights[j] << "[" << j << "]" << endl;
 
 				// Create mountain slice
-				string testSlice = "";
-				for (int k = 0; k < heights[j] * 2; k++)
+				string mountainSlice = "";
+
+				// Preceding space before mountain
+				for (int k = 0; k < maxHeight - i; k++)
 				{
-					testSlice += "X";
+					mountainSlice += "o";
+				}
+
+				mountainSlice += "/";
+
+				// Space in the mountain
+				for (int k = 0; k < i - 1 - (maxHeight - heights[j]); k++)
+				{
+					mountainSlice += "UU";
+				}
+
+				mountainSlice += "\\";
+
+				// following space after mountain
+				for (int k = 0; k < maxHeight - i; k++)
+				{
+					mountainSlice += "o";
 				}
 
 				// Add back to line
-				output[i - 1][j] = testSlice;
+				output[i - 1][j] = mountainSlice;
 			}
 			else
 			{
 				cout << "Mountain short " << heights[j] << "[" << j << "]" << endl;
 
-				string testSlice = "";
+				string mountainSlice = "";
 				for (int k = 0; k < heights[j] * 2; k++)
 				{
-					testSlice += "O";
+					mountainSlice += "O";
 				}
 
 				// Add back to line
-				output[i - 1][j] = testSlice;
+				output[i - 1][j] = mountainSlice;
 			}
 		}
 		cout << "------------------------" << endl;
