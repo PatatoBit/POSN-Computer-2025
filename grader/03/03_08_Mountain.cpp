@@ -10,6 +10,7 @@ int main()
 
 	vector<int> heights;
 
+	// Read inputs
 	for (int i = 0; i < n; i++)
 	{
 		int height;
@@ -20,42 +21,25 @@ int main()
 	int maxHeight = *max_element(heights.begin(), heights.end());
 	int heightsCount = heights.size();
 
-	for (int i = 0; i < maxHeight; i++)
-	{
-		int currentLength = 0;
+	vector<vector<int>> output;
 
+	for (int i = 1; i <= maxHeight; i++)
+	{
+		cout << "Iteration " << i << endl;
+
+		// Check if we hit a mountain
 		for (int j = 0; j < heights.size(); j++)
 		{
-
-			if (maxHeight - i <= heights[j])
+			if (maxHeight - i + 1 <= heights[j])
 			{
-				int requiredPreceding = 0;
-
-				// Calculate required preceding spaces
-				for (int k = 0; k < j; k++)
-				{
-					requiredPreceding += 2 * heights[k] + heights[j] + 1 - i;
-				}
-
-				// Print preceding space
-				for (int k = 0; k < requiredPreceding - currentLength; k++)
-				{
-					cout << " ";
-				}
-
-				// Update current length
-				currentLength += 2 * heights[j] - i + maxHeight;
-
-				// Print pyramid segment
-				cout << "/";
-				for (int k = 0; k < heights[j] - (maxHeight - i); k++)
-				{
-					cout << "  ";
-				}
-				cout << "\\ ";
+				cout << "Hit mountain " << heights[j] << "[" << j << "]" << endl;
+			}
+			else
+			{
+				cout << "Mountain short " << heights[j] << "[" << j << "]" << endl;
 			}
 		}
-		cout << endl;
+		cout << "------------------------" << endl;
 	}
 
 	return 0;
