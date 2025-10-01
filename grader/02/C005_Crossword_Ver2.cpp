@@ -4,53 +4,57 @@ using namespace std;
 
 int main()
 {
-	int x;
-	string a, b;
-	cin >> x >> a >> b;
+	int k, count = 0;
+	cin >> k;
+	string s1, s2;
+	int matchingFirstAt, matchingSecondAt;
+	cin >> s1 >> s2;
 
-	int col = x - 1;
-	if (x < 1 || x > (int)a.length())
+	// Find matching letter
+	for (int i = 0; i < s1.length(); i++)
 	{
-		cout << "error" << endl;
-		return 0;
-	}
-
-	int row = -1;
-	for (int i = 0; i < (int)b.length(); i++)
-	{
-		if (b[i] == a[col])
+		for (int j = 0; j < s2.length(); j++)
 		{
-			row = i;
-			break;
+			if (s1[i] == s2[j])
+			{
+				count++;
+				// cout << "Count: " << count << endl;
+			}
+
+			if (count == k)
+			{
+				matchingFirstAt = i;
+				matchingSecondAt = j;
+				break;
+			}
 		}
+
+		if (count == k)
+			break;
 	}
-	if (row == -1)
+
+	if (count < k)
 	{
-		cout << "error" << endl;
+		cout << "error";
 		return 0;
 	}
 
-	for (int i = 0; i < (int)b.length(); i++)
+	for (int i = 0; i < s2.length(); i++)
 	{
-		if (i == row)
+		if (i != matchingSecondAt)
 		{
-			cout << a << endl;
+			// Print out empty space
+			for (int j = 0; j < matchingFirstAt; j++)
+			{
+				cout << " ";
+			}
+			cout << s2[i] << endl;
 		}
 		else
 		{
-			for (int j = 0; j < (int)a.length(); j++)
-			{
-				if (j == col)
-				{
-					cout << b[i];
-				}
-				else
-				{
-					cout << " ";
-				}
-			}
-			cout << endl;
+			cout << s1 << endl;
 		}
 	}
+
 	return 0;
 }
