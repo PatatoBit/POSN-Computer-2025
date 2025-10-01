@@ -26,14 +26,12 @@ int main()
 
 	for (int i = 1; i <= maxHeight; i++)
 	{
-		cout << "Iteration " << i << endl;
 
 		// Check if we hit a mountain
 		for (int j = 0; j < heights.size(); j++)
 		{
 			if (maxHeight - i + 1 <= heights[j])
 			{
-				cout << "Hit mountain   " << heights[j] << "[" << j << "]" << endl;
 
 				// Create mountain slice
 				string mountainSlice = "";
@@ -65,7 +63,6 @@ int main()
 			}
 			else
 			{
-				cout << "Mountain short " << heights[j] << "[" << j << "]" << endl;
 
 				string mountainSlice = "";
 				for (int k = 0; k < heights[j] * 2; k++)
@@ -77,7 +74,6 @@ int main()
 				output[i - 1][j] = mountainSlice;
 			}
 		}
-		cout << "------------------------" << endl;
 	}
 
 	// Print lines
