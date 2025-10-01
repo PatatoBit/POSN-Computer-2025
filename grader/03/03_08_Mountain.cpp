@@ -41,7 +41,7 @@ int main()
 				// Preceding space before mountain
 				for (int k = 0; k < maxHeight - i; k++)
 				{
-					mountainSlice += "o";
+					mountainSlice += " ";
 				}
 
 				mountainSlice += "/";
@@ -49,7 +49,7 @@ int main()
 				// Space in the mountain
 				for (int k = 0; k < i - 1 - (maxHeight - heights[j]); k++)
 				{
-					mountainSlice += "UU";
+					mountainSlice += "  ";
 				}
 
 				mountainSlice += "\\";
@@ -57,7 +57,7 @@ int main()
 				// following space after mountain
 				for (int k = 0; k < maxHeight - i; k++)
 				{
-					mountainSlice += "o";
+					mountainSlice += " ";
 				}
 
 				// Add back to line
@@ -70,7 +70,7 @@ int main()
 				string mountainSlice = "";
 				for (int k = 0; k < heights[j] * 2; k++)
 				{
-					mountainSlice += "O";
+					mountainSlice += " ";
 				}
 
 				// Add back to line
