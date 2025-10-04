@@ -1,4 +1,11 @@
-**/*.DS_Store
-**/*.cph
-**/*.bin
-.vscode
+# IDE and editor files
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Competitive Programming Helper files
+*.cph
+
+# Compiled binary files
+*.bin
