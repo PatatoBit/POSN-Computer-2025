@@ -1,29 +1,14 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
-// Self attempt!
 
 int main()
 {
-	string s;
-	bool isPalindrome = true;
-	cin >> s;
+	int a[5] = {1, 2, 3, 4, 5}, b[5];
 
-	int sl = s.length();
-
-	for (int i = 0; i <= sl / 2; i++)
+	for (auto element : b)
 	{
-		if (s[i] != s[sl - i - 1])
-		{
-			isPalindrome = false;
-			break;
-		}
+		cout << element << " ";
 	}
-
-	if (isPalindrome)
-		cout << "YES";
-	else
-		cout << "NO";
 
 	return 0;
 }
