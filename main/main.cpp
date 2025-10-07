@@ -3,11 +3,14 @@ using namespace std;
 
 int main()
 {
-	int a[5] = {1, 2, 3, 4, 5}, b[5];
+	string word;
+	cin >> word;
 
-	for (auto element : b)
+	for (int i = 0; i < word.length(); i++)
 	{
-		cout << element << " ";
+		for (int j = i; j < word.length(); j++)
+		{
+		}
 	}
 
 	return 0;
