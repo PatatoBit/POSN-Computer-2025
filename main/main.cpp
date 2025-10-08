@@ -1,17 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int power(int base, int pow)
+{
+	if (pow == 0)
+		return 1;
+	if (pow == 1)
+		return base;
+
+	return power(base, pow - 1) * base;
+}
+
 int main()
 {
-	string word;
-	cin >> word;
+	int base, pow;
+	cin >> base >> pow;
 
-	for (int i = 0; i < word.length(); i++)
-	{
-		for (int j = i; j < word.length(); j++)
-		{
-		}
-	}
+	cout << power(base, pow);
 
 	return 0;
 }
