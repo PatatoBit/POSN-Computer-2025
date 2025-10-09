@@ -1,22 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int power(int base, int pow)
-{
-	if (pow == 0)
-		return 1;
-	if (pow == 1)
-		return base;
-
-	return power(base, pow - 1) * base;
-}
-
 int main()
 {
-	int base, pow;
-	cin >> base >> pow;
+	int a = 10, b = 20, *p, *q, *prtA, *prtB;
+	p = &a;
+	q = &b;
 
-	cout << power(base, pow);
+	cout << *p + *q << endl;
+	cout << abs(*p - *q) << endl;
 
 	return 0;
 }
