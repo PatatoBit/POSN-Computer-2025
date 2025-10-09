@@ -6,11 +6,23 @@ int main()
 	int n, prev, current = 0;
 	cin >> n;
 
-	for (int i = 0; i < n + 1; i++)
+	for (int i = 0; i <= n; i++)
 	{
 		cout << current;
+
+		if (i != n)
+			cout << ", ";
+
 		if (i == 0)
-			current++;
+		{
+			current += 1;
+		}
+		else
+		{
+			int temp = prev;
+			prev = current;
+			current += temp;
+		}
 	}
 
 	return 0;
