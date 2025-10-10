@@ -31,61 +31,61 @@ int main()
 
 	vector<Student> highestYears, highestMonths, highestDays;
 
-	int highestYear = students[0].birth.yy;
+	int highestYear = students[0].checkin.yy;
 	// Find most recent years
 	for (auto student : students)
 	{
-		if (student.birth.yy == highestYear)
+		if (student.checkin.yy == highestYear)
 		{
 			highestYears.push_back(student);
 		}
-		else if (student.birth.yy > highestYear)
+		else if (student.checkin.yy > highestYear)
 		{
 			highestYears.clear();
 			highestYears.push_back(student);
-			highestYear = student.birth.yy;
+			highestYear = student.checkin.yy;
 		}
 	}
 
-		int highestMonth = highestYears[0].birth.mm;
+	int highestMonth = highestYears[0].checkin.mm;
 	// Find most recent years
 	for (auto student : highestYears)
 	{
-		if (student.birth.mm == highestMonth)
+		if (student.checkin.mm == highestMonth)
 		{
 			highestMonths.push_back(student);
 		}
-		else if (student.birth.mm > highestMonth)
+		else if (student.checkin.mm > highestMonth)
 		{
 			highestMonths.clear();
 			highestMonths.push_back(student);
-			highestMonth = student.birth.mm;
+			highestMonth = student.checkin.mm;
 		}
 	}
 
-	int highestDay = highestMonths[0].birth.dd;
+	int highestDay = highestMonths[0].checkin.dd;
 	// Find most recent years
 	for (auto student : highestMonths)
 	{
-		if (student.birth.dd == highestDay)
+		if (student.checkin.dd == highestDay)
 		{
 			highestDays.push_back(student);
 		}
-		else if (student.birth.dd > highestDay)
+		else if (student.checkin.dd > highestDay)
 		{
 			highestDays.clear();
 			highestDays.push_back(student);
-			highestDay = student.birth.mm;
+			highestDay = student.checkin.mm;
 		}
 	}
 
-	cout << "Youngest student(s)" << endl;
+	cout << "Most recently joined student(s)" << endl;
 	for (auto student : highestDays)
 	{
 		cout << "----------------------" << endl;
 		cout << "ID: " << student.id << endl;
 		cout << "Name: " << student.name << endl;
-		cout << "Born on: " << student.birth.yy << "-" << student.birth.mm << "-" << student.birth.dd << endl;
+		cout << "Checked in on: " << student.checkin.yy << "-" << student.checkin.mm << "-" << student.checkin.dd << endl;
 	}
 
 	return 0;
