@@ -3,21 +3,7 @@ using namespace std;
 
 unsigned long long findHigh(unsigned long long x)
 {
-	unsigned long long max = 1;
-
-	for (int i = x; i >= 1; i--)
-	{
-		for (int j = i - 1; j >= 1; j--)
-		{
-			if (i % j == 0 && j > max)
-			{
-				max = j;
-				continue;
-			}
-		}
-	}
-
-	return max;
+	return x / 2;
 }
 
 int main()
