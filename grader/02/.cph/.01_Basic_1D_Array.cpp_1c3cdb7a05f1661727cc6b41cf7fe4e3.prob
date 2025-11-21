@@ -1,1 +1,0 @@
-{"name":"Local: 01_Basic_1D_Array","url":"d:\\Projects\\PixelmathPOSN\\grader\\02\\01_Basic_1D_Array.cpp","tests":[{"id":1758786649382,"input":"7\n50 12 11 -99 -999 12 -28","output":"50 11 -999 -28"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Projects\\PixelmathPOSN\\grader\\02\\01_Basic_1D_Array.cpp","group":"local","local":true}
