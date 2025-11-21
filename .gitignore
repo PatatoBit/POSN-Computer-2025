@@ -6,6 +6,7 @@
 
 # Competitive Programming Helper files
 *.cph
+*.cph/
 
 # Compiled binary files
 *.bin
