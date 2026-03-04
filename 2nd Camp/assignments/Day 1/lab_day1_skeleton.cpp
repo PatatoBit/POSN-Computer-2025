@@ -90,24 +90,35 @@ Node *removeValue(Node *head, int X)
 Node *mergeList(Node *a, Node *b)
 {
     // TODO
+    Node dummy(0);
+    Node *tail = &dummy;
 
     while (a && b)
     {
-        if (a->val > b->val)
+        if (a->val <= b->val)
         {
-            current->next = a;
+            tail->next = a;
             a = a->next;
         }
         else
         {
-            current->next = b;
+            tail->next = b;
             b = b->next;
         }
 
-        current = current->next;
+        tail = tail->next;
     }
 
-    return a;
+    if (a)
+    {
+        tail->next = a;
+    }
+    else if (b)
+    {
+        tail->next = b;
+    }
+
+    return dummy.next;
 }
 
 // ===== Simple local tests (optional) =====
