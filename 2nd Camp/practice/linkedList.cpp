@@ -33,14 +33,17 @@ Node *buildList(const vector<int> &v)
 
 void printList(Node *head)
 {
-	Node *current = head;
-
-	while (current)
+	cout << "[";
+	bool first = true;
+	while (head)
 	{
-		cout << current->val << endl;
-
-		current = current->next;
+		if (!first)
+			cout << ",";
+		cout << head->val;
+		first = false;
+		head = head->next;
 	}
+	cout << "]\n";
 }
 
 Node *reversedList(Node *head)
@@ -64,7 +67,25 @@ Node *reversedList(Node *head)
 Node *filteredList(Node *head, int x)
 {
 	// TODO
-	return head;
+	Node *curr = head, dummy = Node(0), *prev = &dummy;
+
+	while (curr)
+	{
+		Node *next = curr->next;
+
+		if (curr->val == x)
+		{
+			prev->next = next;
+		}
+		else
+		{
+			prev = curr;
+		}
+
+		curr = next;
+	}
+
+	return dummy->next;
 }
 
 Node *mergedList(Node *a, Node *b)
@@ -75,9 +96,13 @@ Node *mergedList(Node *a, Node *b)
 
 int main()
 {
-	Node *dummy = buildList({1, 2, 3, 4});
-	Node *reversedDummy = reversedList(dummy);
+	Node *reversedDummy = buildList({1, 2, 3, 4});
+	reversedDummy = reversedList(reversedDummy);
 	printList(reversedDummy);
+
+	Node *filterDummy = buildList({1, 2, 3, 3, 4, 5});
+	filterDummy = filteredList(filterDummy, 1);
+	printList(filterDummy);
 
 	return 0;
 }

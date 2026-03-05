@@ -66,25 +66,31 @@ Node *reverseList(Node *head)
 Node *removeValue(Node *head, int X)
 {
     // TODO
-    Node *cur = head, *prev = nullptr, *next, *dummy;
-    dummy->next = head;
+    Node dummy(0);
+    dummy.next = head;
+
+    Node *prev = &dummy;
+    Node *cur = head;
 
     while (cur)
     {
-        next = cur->next;
-
         if (cur->val == X)
         {
+            Node *toDelete = cur;
             prev->next = cur->next;
-            free(cur);
+            // cur = cur->next;
+            delete toDelete;
         }
         else
+        {
             prev = cur;
+            // cur = cur->next;
+        }
 
-        cur = next;
+        cur = cur->next;
     }
 
-    return dummy->next;
+    return dummy.next;
 }
 
 Node *mergeList(Node *a, Node *b)
@@ -131,7 +137,7 @@ int main()
 
     // Level 2 test
     Node *h2 = buildList({1, 2, 3, 2, 4, 2});
-    h2 = removeValue(h2, 2);
+    h2 = removeValue(h2, 1);
     printList(h2); // expected [1,3,4]
 
     // Level 3 test
