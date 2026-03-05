@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/patato/Documents/Projects/POSN-Computer-2025/2nd Camp/assignments/Day 2/Lab_Day2_Skeleton_v3'
+relocations:     []
+...

@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 struct Node
@@ -78,16 +78,14 @@ Node *removeValue(Node *head, int X)
         {
             Node *toDelete = cur;
             prev->next = cur->next;
-            // cur = cur->next;
+            cur = cur->next;
             delete toDelete;
         }
         else
         {
             prev = cur;
-            // cur = cur->next;
+            cur = cur->next;
         }
-
-        cur = cur->next;
     }
 
     return dummy.next;
@@ -137,7 +135,7 @@ int main()
 
     // Level 2 test
     Node *h2 = buildList({1, 2, 3, 2, 4, 2});
-    h2 = removeValue(h2, 1);
+    h2 = removeValue(h2, 2);
     printList(h2); // expected [1,3,4]
 
     // Level 3 test
